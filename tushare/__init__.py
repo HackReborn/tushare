@@ -103,8 +103,6 @@ for trader API
 """
 from tushare.trader.trader import TraderAPI
 
-from tushare.stock.minsdata import TsData
-
 """
 for futures API
 """

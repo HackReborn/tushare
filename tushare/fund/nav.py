@@ -223,8 +223,9 @@ def get_nav_history(code, start=None, end=None, retry_count=3, pause=0.001, time
     df_fund = get_fund_info(code)
 
     fund_type = df_fund.ix[0]['Type2Name']
-    if (fund_type.find(u'债券型') != -1) or (fund_type.find(u'货币型') != -1):
-        ismonetary = True
+    if fund_type is not None:
+        if (fund_type.find(u'债券型') != -1) or (fund_type.find(u'货币型') != -1):
+            ismonetary = True
 
     ct._write_head()
     nums = _get_nav_histroy_num(code, start, end, ismonetary)
